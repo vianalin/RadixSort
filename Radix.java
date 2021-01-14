@@ -7,9 +7,11 @@ public class Radix {
 		return Math.abs(((int) n / divisor) % 10);
 	}
 
+	//2: get the number of digits in n
+	public static int length(int n) {
+		return String.valueOf(Math.abs(n)).length(); //turn abs n to string n count
+	}
 
-
-	//public static int length(int n);
 
 	//public static void merge(MyLinkedList original, MyLinkedList[] buckets);
 }
