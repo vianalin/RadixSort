@@ -4,7 +4,7 @@ public class Radix {
 	//123: 2 = hundreds, 1 = tens, 0 = ones
 	public static int nth(int n, int col) {
 		int divisor = (int) Math.pow(10, col);
-		return ((int) n / divisor) % 10;
+		return Math.abs(((int) n / divisor) % 10);
 	}
 
 
