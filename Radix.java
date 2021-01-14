@@ -12,6 +12,14 @@ public class Radix {
 		return String.valueOf(Math.abs(n)).length(); //turn abs n to string n count
 	}
 
+	//3: merge all of the linked lists in the bucket array into ur original linked list
+	//   original may have elements and those should be kept
+	//   this is 0(buckets.length) which shld be 10 when we use later
+	//   the bucket[0] will be merged first, then the bucket[1]
+	public static void merge(MyLinkedList original, MyLinkedList[] buckets) {
+		for(int i = 0; i < buckets.length; i++) {
+			original.extend(buckets[i]);
+		}
+	}
 
-	//public static void merge(MyLinkedList original, MyLinkedList[] buckets);
 }
