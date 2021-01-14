@@ -23,6 +23,7 @@ public class Radix {
 		}
 	}
 
+	//5: write method that sorts non-negative integer values
 	public static void radixSortSimple(SortableLinkedList data) {
 		SortableLinkedList[] buckets = new SortableLinkedList[10];
 		for(int i = 0; i < 10; i++) { //making list w all 10 places
@@ -54,6 +55,28 @@ public class Radix {
 			merge(data, buckets);
 		}
 
+	}
+
+	//6: write method that sorts any integer value
+	public static void radixSort(SortableLinkedList data) {
+		SortableLinkedList neg = new SortableLinkedList();
+		SortableLinkedList pos = new SortableLinkedList();
+
+		while(data.size() != 0) {
+			int first = data.remove(0);
+			if(first < 0) neg.add(first * -1);
+			else pos.add(first);
+
+			radixSortSimple(neg);
+			radixSortSimple(pos);
+		}
+
+		while(neg.size() != 0) {
+			data.add(neg.remove(neg.size() - 1) * -1);
+		}
+
+		data.extend(pos);
+		
 	}
 
 }
