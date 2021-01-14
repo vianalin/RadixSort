@@ -12,5 +12,11 @@ public class Tester {
 		System.out.println(Radix.nth(123,2) == 1);
 		System.out.println(Radix.nth(-123,2) == 1);
 
+		System.out.println("testing length: ");
+		System.out.println(Radix.length(0) == 1);
+		System.out.println(Radix.length(15) == 2);
+		System.out.println(Radix.length(-10) == 2);
+		System.out.println(Radix.length(5112) == 4);
+
 	}
 }
