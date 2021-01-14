@@ -8,6 +8,9 @@ public class Tester {
 
 		System.out.println("testing nth: ");
 		System.out.println(Radix.nth(123,1) == 2);
+		System.out.println(Radix.nth(-123,1) == 2);
+		System.out.println(Radix.nth(123,2) == 1);
+		System.out.println(Radix.nth(-123,2) == 1);
 
 	}
 }
